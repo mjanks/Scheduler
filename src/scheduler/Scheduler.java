@@ -79,4 +79,15 @@ public abstract class Scheduler {
 	 * 
 	 */
 	public abstract  void  blockTilThereIsAJob(); 
+
+
+
+	// *** ADDDED FOR IO ****************************************
+	public abstract void startIO();
+
+	public abstract void finishIO(Job j);
+
+	public abstract boolean hasReadyJobs();
+
+
 }

@@ -1,7 +1,7 @@
 package scheduler;
 
-//import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.ArrayList;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * Modified by: Michael Janks
@@ -22,9 +22,17 @@ public class FCFSScheduler extends Scheduler {
    */
 	
 	ArrayList<Job> readyQ = new ArrayList<Job>(); // SHARED OBJECT, BUFFER
+
+
+
+	
+	// *** ADDED inputQ FOR IO ***********************************************************
+	ConcurrentLinkedQueue<Job> inputQ = new ConcurrentLinkedQueue<Job>(); 
+
+
+
 	
 	public synchronized void add(Job J) {
-		
 		if(readyQ.isEmpty()) {
 			readyQ.add(J);
 			System.out.println(Thread.currentThread() + " notifying the readyQ");
@@ -88,11 +96,30 @@ public class FCFSScheduler extends Scheduler {
 			System.out.println(Thread.currentThread() + " is blocking until there is a job");
 			wait();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	  
-	  //System.out.println("evidently there is now a job on readyQ");
+	  System.out.println("evidently there is now a job on readyQ");
   }
+
+	@Override
+	public void startIO() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void finishIO(Job j) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean hasReadyJobs() {
+		if(!readyQ.isEmpty()) {
+			return true;
+		}
+		return false;
+	}
 }
   

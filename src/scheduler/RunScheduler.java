@@ -15,7 +15,7 @@ import java.util.*;
 
 public class RunScheduler {
 	
-  private final static String INPUT_FILE_NAME = "testing2.txt"; // filename
+  private final static String INPUT_FILE_NAME = "testing1.txt"; // filename
 
   public static void main(String[] args) {
 	  
