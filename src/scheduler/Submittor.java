@@ -1,5 +1,7 @@
 package scheduler;
+
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 /**
@@ -52,8 +54,11 @@ class Submittor extends Thread {
     // iterate through jobs strings, parse the string, create jobs and add to operating system.
     for (String jobDesc : myJobDescs) {
     	String id; // ID/name of the Job (simulated process) 
-    	int delay; // msec delay until this Job is submitted to the kernel
-    	String burstDescription;  // The description of that Job.  (For FCFS this will be a single integer token)
+      int delay; // msec delay until this Job is submitted to the kernel
+
+
+      // *** CHANGED FROM String TO LinkedList *********
+    	LinkedList<Integer> burstDescription = new LinkedList<Integer>();  // The description of that Job.  (For FCFS this will be a single integer token)
     	
     	//System.out.println("TO_DO Complete Submittor.run()");
     	/*
@@ -63,8 +68,26 @@ class Submittor extends Thread {
     	
     	st = new StringTokenizer(jobDesc);
     	id = st.nextToken();
-    	delay = Integer.parseInt(st.nextToken());
-    	burstDescription = st.nextToken();
+      delay = Integer.parseInt(st.nextToken());
+      
+
+
+
+
+
+      // *** MODIFIED TO PARSE THE INPUT STRING AND CREATE LINKED LIST OF BURST DESCRIPTIONS ********************************
+      //burstDescription = st.nextToken();
+      while(st.hasMoreTokens()) {
+        burstDescription.add(Integer.parseInt(st.nextToken()));
+      }
+      // **************************************************************************
+      
+
+
+
+
+
+
     	
     	try {
     		sleep( delay ); // wait until submission

@@ -16,6 +16,10 @@ Job 1 is performing task #12
 Job 1 is performing task #13
 Job 1 is performing task #14
 Job 1 is performing task #15
+Job 1 is performing task #16
+Job 1 is performing task #17
+Job 1 is performing task #18
+Job 1 is performing task #19
 Thread[Thread-0,8,main] is blocking until there is a job
 Thread[Submittor,7,main] notifying the readyQ
 Job 2 is performing task #0
@@ -43,6 +47,11 @@ Job 2 is performing task #21
 Job 2 is performing task #22
 Job 2 is performing task #23
 Job 2 is performing task #24
+Job 2 is performing task #25
+Job 2 is performing task #26
+Job 2 is performing task #27
+Job 2 is performing task #28
+Job 2 is performing task #29
 Thread[Submittor,7,main] notifying the readyQ
 Job 3 is performing task #0
 Job 3 is performing task #1
@@ -69,6 +78,11 @@ Job 3 is performing task #20
 Job 3 is performing task #21
 Job 3 is performing task #22
 Job 3 is performing task #23
+Job 3 is performing task #24
+Job 3 is performing task #25
+Job 3 is performing task #26
+Job 3 is performing task #27
+Job 3 is performing task #28
 Job 4 is performing task #0
 Job 4 is performing task #1
 Job 4 is performing task #2
@@ -93,14 +107,20 @@ Job 4 is performing task #20
 Job 4 is performing task #21
 Job 4 is performing task #22
 Job 4 is performing task #23
+Job 4 is performing task #24
+Job 4 is performing task #25
+Job 4 is performing task #26
+Job 4 is performing task #27
+Job 4 is performing task #28
+Job 4 is performing task #29
 
 GANNT CHART:
-Wall time at start: 1605656827545
+Wall time at start: 1605711947527
 BurstStart  BurstEnd  JOB     
-         0     10008  IDLE    
-     10009     10213  1       
-     10213     10310  IDLE    
-     10311     10615  2       
-     10616     10918  3       
-     10919     11224  4       
-     11224     11224  FINISHED
+         0     10009  IDLE    
+     10020     10229  1       
+     10230     10310  IDLE    
+     10310     10619  2       
+     10620     10923  3       
+     10923     11232  4       
+     11232     11232  FINISHED

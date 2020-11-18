@@ -1,4 +1,6 @@
 package scheduler;
+
+import java.util.LinkedList;
 import java.util.concurrent.locks.Condition;
 
 /**
@@ -23,7 +25,22 @@ class Job extends Thread {
   							// When we introduce time-slicing, the Job can be use this to suspend
   							// itself, passing control back to the OS simulator.
   
-  private final int burstTime; // job burst time
+
+
+
+
+                
+                
+  // *** COMMENTED OUT burstTime, ADDED burstTimes  ***           
+  //private final int burstTime; // job burst time
+  private final LinkedList<Integer> burstTimes = new LinkedList<Integer>();
+
+
+
+
+
+
+
   private final String name; // name of job
   
   private volatile boolean shouldRun = false; // true if job should be running
@@ -36,12 +53,30 @@ class Job extends Thread {
    * the CPU burst duration.  In a later version of this program we'll augment
    * the descriptors to allow for a sequence of CPU and IO burst lengths.
    */
-  public Job(String burstDescriptor, SystemSimulator s, String name, JobWorkable workToDo) {
+  // ****** CHANGED TYPE OF burstDescriptor TO LinkedList *****************************************
+  public Job(LinkedList<Integer> burstDescriptor, SystemSimulator s, String name, JobWorkable workToDo) {
     // Initialize stuff
     myOS = s;
     myCondition = s.getSingleThreadMutex().newCondition();
     
-    burstTime = Integer.parseInt( burstDescriptor );
+
+
+
+
+
+    // *** COMMENTED OUT burstTime, ADDED burstTimes BELOW IT ***
+    //burstTime = Integer.parseInt( burstDescriptor );
+    for(int i=0; i < burstDescriptor.size(); i++) {
+      burstTimes.add(burstDescriptor.get(i));
+    }
+    //burstTimes = burstDescriptor;
+    //burstTimes.add(Integer.parseInt( burstDescriptor ));
+
+
+
+
+
+
     work = workToDo;
     
     this.name = name;
@@ -55,13 +90,27 @@ class Job extends Thread {
     return( startTime );
   }
 
+
+
+
+
+
+
   /*
    * An accessor, returning the CPU burst time of the job.
    */
-  protected int getBurstTime()
+  protected LinkedList<Integer> getBurstTime() // *** CHANGED RETURN TYPE FROM int TO LinkedList<Integer> ***
   {
-    return( burstTime );
+    // *** CHANGED FROM burstTime TO burstTimes ******************************************************
+    return( burstTimes );
   }
+
+
+
+
+
+
+
 
   public Condition getMyCondition() {
 	  return myCondition;
@@ -103,8 +152,17 @@ class Job extends Thread {
 	  //Should block here until the OS blocks itself on this Job's Condition
 	  myOS.getSingleThreadMutex().lock();
 	  
-	  startTime = System.currentTimeMillis();
-	  while (System.currentTimeMillis()-startTime < burstTime) {// Not yet exhausted my run-time
+    startTime = System.currentTimeMillis();
+    
+
+
+
+    // *** CHANGED burstTime TO burstTimes AND ACCESS THE FIRST ELEMENT. THIS WILL PROBABLY HAVE TO CHANGE ******
+    // **************** WHICH BURSTTIME DO YOU USE? HOW TO CHOOSE? *************************************************
+    while (System.currentTimeMillis()-startTime < burstTimes.get(0)) {// Not yet exhausted my run-time
+      // *****************************************************************************************************************
+      
+
 		  work.doWork(this.getNameOf()); // This should return in only a few milliseconds
 		  try {
 			sleep(10);

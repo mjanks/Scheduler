@@ -1,5 +1,6 @@
 package scheduler;
 
+import java.util.LinkedList;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -97,16 +98,31 @@ public void run()
     chart.print();
   }
   
+
+
+
+
+
+
+
   /*
    * adds given job, j, to the ready set. Invoked by a Submittor.
    * Keep in mind that j might not start running immediately, depending on whether another job is already running.
    */
-
-  public void AddNewProcess(String name, String burstDescription, JobWorkable workToDo)
+// ***** CHANGED TYPE OF burstDescription TO LinkedList ************************************
+  public void AddNewProcess(String name, LinkedList<Integer> burstDescription, JobWorkable workToDo)
   {
 	  Job newJob = new Job(burstDescription, this, name, workToDo);
 	  myScheduler.add( newJob );
   }
+  // **********************************************************************************************
+
+
+
+
+
+
+
   
   /**
    * Exit() called by a Job thread to indicate that it is terminating.
