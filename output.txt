@@ -1,0 +1,106 @@
+Thread[Thread-0,8,main] is blocking until there is a job
+Thread[Submittor,7,main] notifying the readyQ
+Job 1 is performing task #0
+Job 1 is performing task #1
+Job 1 is performing task #2
+Job 1 is performing task #3
+Job 1 is performing task #4
+Job 1 is performing task #5
+Job 1 is performing task #6
+Job 1 is performing task #7
+Job 1 is performing task #8
+Job 1 is performing task #9
+Job 1 is performing task #10
+Job 1 is performing task #11
+Job 1 is performing task #12
+Job 1 is performing task #13
+Job 1 is performing task #14
+Job 1 is performing task #15
+Thread[Thread-0,8,main] is blocking until there is a job
+Thread[Submittor,7,main] notifying the readyQ
+Job 2 is performing task #0
+Job 2 is performing task #1
+Job 2 is performing task #2
+Job 2 is performing task #3
+Job 2 is performing task #4
+Job 2 is performing task #5
+Job 2 is performing task #6
+Job 2 is performing task #7
+Job 2 is performing task #8
+Job 2 is performing task #9
+Job 2 is performing task #10
+Job 2 is performing task #11
+Job 2 is performing task #12
+Job 2 is performing task #13
+Job 2 is performing task #14
+Job 2 is performing task #15
+Job 2 is performing task #16
+Job 2 is performing task #17
+Job 2 is performing task #18
+Job 2 is performing task #19
+Job 2 is performing task #20
+Job 2 is performing task #21
+Job 2 is performing task #22
+Job 2 is performing task #23
+Job 2 is performing task #24
+Thread[Submittor,7,main] notifying the readyQ
+Job 3 is performing task #0
+Job 3 is performing task #1
+Job 3 is performing task #2
+Job 3 is performing task #3
+Job 3 is performing task #4
+Job 3 is performing task #5
+Job 3 is performing task #6
+Job 3 is performing task #7
+Job 3 is performing task #8
+Thread[Submittor,7,main] notifying the readyQ
+Job 3 is performing task #9
+Job 3 is performing task #10
+Job 3 is performing task #11
+Job 3 is performing task #12
+Job 3 is performing task #13
+Job 3 is performing task #14
+Job 3 is performing task #15
+Job 3 is performing task #16
+Job 3 is performing task #17
+Job 3 is performing task #18
+Job 3 is performing task #19
+Job 3 is performing task #20
+Job 3 is performing task #21
+Job 3 is performing task #22
+Job 3 is performing task #23
+Job 4 is performing task #0
+Job 4 is performing task #1
+Job 4 is performing task #2
+Job 4 is performing task #3
+Job 4 is performing task #4
+Job 4 is performing task #5
+Job 4 is performing task #6
+Job 4 is performing task #7
+Job 4 is performing task #8
+Job 4 is performing task #9
+Job 4 is performing task #10
+Job 4 is performing task #11
+Job 4 is performing task #12
+Job 4 is performing task #13
+Job 4 is performing task #14
+Job 4 is performing task #15
+Job 4 is performing task #16
+Job 4 is performing task #17
+Job 4 is performing task #18
+Job 4 is performing task #19
+Job 4 is performing task #20
+Job 4 is performing task #21
+Job 4 is performing task #22
+Job 4 is performing task #23
+
+GANNT CHART:
+Wall time at start: 1605656827545
+BurstStart  BurstEnd  JOB     
+         0     10008  IDLE    
+     10009     10213  1       
+     10213     10310  IDLE    
+     10311     10615  2       
+     10616     10918  3       
+     10919     11224  4       
+     11224     11224  FINISHED
